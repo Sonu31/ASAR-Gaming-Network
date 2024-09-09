@@ -40,16 +40,5 @@
         app:layout_constraintTop_toBottomOf="@+id/YesNoPagebtn" />
 
 
-    <ImageView
-        android:id="@+id/animimage"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_130sdp"
-        android:src="@drawable/ipl_logo"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="@dimen/_40sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

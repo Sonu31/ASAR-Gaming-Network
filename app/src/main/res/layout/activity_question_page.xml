@@ -173,7 +173,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/pieChart" />
 
-            <com.jjoe64.graphview.GraphView
+            <com.velli20.materialunixgraph.LineGraph
                 android:layout_width="match_parent"
                 android:layout_height="200dip"
                 android:id="@+id/graph"
