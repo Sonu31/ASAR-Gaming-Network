@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/category"
+
+        android:title="Category"/>
+    <item
+        android:id="@+id/circket"
+        android:title="Circket"/>
+
+    <item
+        android:id="@+id/badminton"
+        android:title="Badminton"/>
+
+    <item
+        android:id="@+id/kabaddi"
+        android:title="Kabaddi"/>
+    <item
+        android:id="@+id/fieldhockey"
+        android:title="Field hockey"/>
+</menu>

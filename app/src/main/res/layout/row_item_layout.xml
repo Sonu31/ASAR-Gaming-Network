@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#9C181717"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_7sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_13sdp"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_17sdp"
+                android:text="Kolkata to win the match vs \n  Mumbai?"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/ipl_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/yesbtn"
+                android:layout_width="@dimen/_127sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Yes ₹5.3"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/nobtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv2"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                app:neumorph_backgroundColor="#054AE2"
+                app:neumorph_shadowElevation="1dp"
+                app:neumorph_shapeType="pressed"
+                app:neumorph_strokeColor="#054AE2"
+                app:neumorph_strokeWidth="2dp"
+                app:neumorph_shadowColorLight="#0E53F0"
+                app:neumorph_shadowColorDark="#043195"
+
+                />
+
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/nobtn"
+                android:layout_width="@dimen/_127sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="No ₹ 4.3"
+                android:textColor="@color/white"
+                app:neumorph_shadowElevation="1dp"
+
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/yesbtn"
+                app:layout_constraintTop_toBottomOf="@+id/tv2"
+                app:neumorph_backgroundColor="#06C170"
+                app:neumorph_strokeColor="#1FED93"
+                app:neumorph_strokeWidth="2dp"
+
+
+                app:neumorph_shapeType="pressed"
+
+                app:neumorph_shadowColorLight="#1AED92"
+                app:neumorph_shadowColorDark="#16C579"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

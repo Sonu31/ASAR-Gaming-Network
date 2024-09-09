@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ASAR Gaming Network</string>
+    <string name="home_page">Home Page</string>
+    <string name="YesNoPage">Yes / No Page</string>
+    <string name="QuestionPage">Question Page</string>
+    <string name="kolkata_to_win_the_match_vs_mumbai">Kolkata to win the match vs Mumbai?</string>
+    <string name="category">Category</string>
+</resources>
