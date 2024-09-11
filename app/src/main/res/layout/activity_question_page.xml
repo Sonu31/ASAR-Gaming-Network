@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:graph="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -174,14 +175,36 @@
                 app:layout_constraintTop_toBottomOf="@+id/pieChart" />
 
             <com.velli20.materialunixgraph.LineGraph
-                android:layout_width="match_parent"
-                android:layout_height="200dip"
                 android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
 
-                app:layout_constraintTop_toBottomOf="@+id/tv5" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv5"
+                graph:dialogBackgroundColor="#FFFFFF"
+                graph:dialogOutlineColor="#757575"
+                graph:drawLineTouchedPointIndicatorLine="true"
+                graph:drawTimeLabelsIn24hourMode="true"
+                graph:graphFrameColor="#e0e0e0"
+                graph:graphFrameStrokeWidth="1dp"
+                graph:horizontalAxisLabelColor="#9e9e9e"
+                graph:horizontalAxisLabelTextSize="14sp"
+                graph:linePointRadius="3dp"
+                graph:lineTouchedPointColor="#00b0ff"
+                graph:lineTouchedPointIndicatorLineColor="#757575"
+                graph:lineTouchedPointRadius="6dp"
+                graph:maxVerticalAxisCount="4"
+                graph:maxVerticalAxisValue="120"
+                graph:minVerticalAxisValue="0"
+                graph:verticalAxisLabelColor="#9e9e9e"
+                graph:verticalAxisLabelTextSize="12sp"
+                graph:verticalAxisValueLabel=" EUROS" />
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btnid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/graph">
@@ -191,12 +214,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    app:layout_constraintEnd_toStartOf="@id/three_hours"
                     android:background="@drawable/hournsbtnbg"
                     android:paddingHorizontal="@dimen/_14sdp"
                     android:paddingVertical="@dimen/_6sdp"
                     android:text="1h"
                     android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@id/three_hours"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
@@ -210,9 +233,9 @@
                     android:layout_marginTop="3dp"
                     android:background="@drawable/hournsbtnbg"
 
-                    android:text="3h"
                     android:paddingHorizontal="@dimen/_14sdp"
                     android:paddingVertical="@dimen/_6sdp"
+                    android:text="3h"
                     android:textColor="@color/white"
 
                     app:layout_constraintEnd_toStartOf="@+id/twelve_hours"
@@ -224,12 +247,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/hournsbtnbg"
                     android:paddingHorizontal="@dimen/_14sdp"
                     android:paddingVertical="@dimen/_6sdp"
-                    android:background="@drawable/hournsbtnbg"
-
                     android:text="12h"
+
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toStartOf="@+id/All_Time"
                     app:layout_constraintStart_toEndOf="@+id/three_hours"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -243,10 +266,10 @@
                     android:background="@drawable/hournsbtnbg2"
 
 
-                    android:text="All Time"
-                    android:textColor="@color/black"
                     android:paddingHorizontal="@dimen/_14sdp"
                     android:paddingVertical="@dimen/_6sdp"
+                    android:text="All Time"
+                    android:textColor="@color/black"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/twelve_hours"
@@ -255,6 +278,560 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <TextView
+                android:id="@+id/activityid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_17sdp"
+                android:text="ACTIVITY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnid" />
+
+            <TextView
+                android:id="@+id/orderbookid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_17sdp"
+                android:text="ORDER BOOK"
+                app:layout_constraintStart_toEndOf="@+id/activityid"
+                app:layout_constraintTop_toBottomOf="@+id/btnid" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/s1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/orderbookid">
+
+
+                <TextView
+                    android:id="@+id/imgid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:drawableTop="@drawable/avter"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Hello"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+
+                    android:background="@drawable/blues1"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="₹9"
+
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvv2"
+                    app:layout_constraintStart_toEndOf="@+id/imgid"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvv2"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:background="@drawable/greenbg"
+                    android:gravity="end"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:text="₹4"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imgid4"
+                    app:layout_constraintTop_toTopOf="parent"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/imgid4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:drawableTop="@drawable/avter"
+
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Robin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="a few second ago"
+                    android:textColor="#8FB4AEAE"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/s2"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/s1">
+
+
+                <TextView
+                    android:id="@+id/imgid2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:drawableTop="@drawable/avter"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Hello"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvv22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+
+                    android:background="@drawable/blues1"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="₹9"
+
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvvc2"
+                    app:layout_constraintStart_toEndOf="@+id/imgid2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvvc2"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:background="@drawable/greenbg"
+                    android:gravity="end"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:text="₹4"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img2"
+                    app:layout_constraintTop_toTopOf="parent"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:drawableTop="@drawable/avter"
+
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Robin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="a few second ago"
+                    android:textColor="#8FB4AEAE"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvv22" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/s3"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/s2">
+
+
+                <TextView
+                    android:id="@+id/imgid3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:drawableTop="@drawable/avter"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Hello"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvv23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+
+                    android:background="@drawable/blues1"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="₹9"
+
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvvc3"
+                    app:layout_constraintStart_toEndOf="@+id/imgid3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvvc3"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:background="@drawable/greenbg"
+                    android:gravity="end"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:text="₹4"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img3"
+                    app:layout_constraintTop_toTopOf="parent"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:drawableTop="@drawable/avter"
+
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Robin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="a few second ago"
+                    android:textColor="#8FB4AEAE"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvv23" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/s4"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/s3">
+
+
+                <TextView
+                    android:id="@+id/imgid44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:drawableTop="@drawable/avter"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Hello"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvv24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+
+                    android:background="@drawable/blues1"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="₹9"
+
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvvc4"
+                    app:layout_constraintStart_toEndOf="@+id/imgid44"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvvc4"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:background="@drawable/greenbg"
+                    android:gravity="end"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:text="₹4"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img4"
+                    app:layout_constraintTop_toTopOf="parent"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/img4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:drawableTop="@drawable/avter"
+
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="Robin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="a few second ago"
+                    android:textColor="#8FB4AEAE"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvv24" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/seeAll"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/seeallbg"
+                android:drawableEnd="@drawable/baseline_arrow_right_alt_24"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_9sdp"
+                android:text="See all"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/s4" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/aboutid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:layout_constraintTop_toBottomOf="@+id/seeAll">
+
+                <TextView
+                    android:id="@+id/aboutus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="About the event"
+                    android:textSize="@dimen/_27sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="Traders"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textColor="#B7B1B0B1"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aboutus" />
+
+                <TextView
+                    android:id="@+id/volume_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_90sdp"
+                    android:text="Volume"
+                    android:textColor="#B7B1B0B1"
+                    android:textSize="20dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/aboutus"
+                    graph:layout_constraintStart_toEndOf="@+id/tv" />
+
+                <TextView
+                    android:id="@+id/tvv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="₹47.12k"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv" />
+
+                <TextView
+                    android:id="@+id/volume_tvdata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_90sdp"
+
+                    android:text="₹9.9k"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    graph:layout_constraintStart_toEndOf="@+id/tvv"
+                    graph:layout_constraintTop_toBottomOf="@+id/volume_tv" />
+
+
+                <TextView
+                    android:id="@+id/startdate_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Started at"
+                    android:textColor="#9CFFFFFF"
+                    android:textSize="20dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvv" />
+
+
+                <TextView
+                    android:id="@+id/enddata_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_90sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Ending at"
+                    android:textColor="#9CFFFFFF"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvv" />
+
+                <TextView
+                    android:id="@+id/startdate_tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="jun19,2023 4:40PM"
+                    android:textColor="@color/white"
+
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/startdate_tv" />
+
+                <TextView
+                    android:id="@+id/enddate_tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_150sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="jun24,2024 4:40Pm"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/startdate_tv_data"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/startdate_tv" />
+
+
+                <TextView
+                    android:id="@+id/Keep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_30sdp"
+                    android:textColor="#8BFFFFFF"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/startdate_tv_data"
+                    android:text="Keep\n trading!" />
+
+
+                <soup.neumorphism.NeumorphButton
+                    android:id="@+id/yesbtn"
+                    android:layout_width="@dimen/_127sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Yes ₹5.3"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/nobtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Keep"
+                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance3"
+                    app:neumorph_backgroundColor="#054AE2"
+                    app:neumorph_shadowElevation="1dp"
+                    app:neumorph_shapeType="pressed"
+                    app:neumorph_strokeColor="#054AE2"
+                    app:neumorph_strokeWidth="2dp"
+                    app:neumorph_shadowColorLight="#0E53F0"
+                    app:neumorph_shadowColorDark="#043195"
+
+                    />
+
+
+                <soup.neumorphism.NeumorphButton
+                    android:id="@+id/nobtn"
+                    android:layout_width="@dimen/_127sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="No ₹ 4.3"
+                    android:textColor="@color/white"
+                    app:neumorph_shadowElevation="1dp"
+
+                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/yesbtn"
+                    app:layout_constraintTop_toBottomOf="@+id/Keep"
+                    app:neumorph_backgroundColor="#06C170"
+                    app:neumorph_strokeColor="#1FED93"
+                    app:neumorph_strokeWidth="2dp"
+
+
+                    app:neumorph_shapeType="pressed"
+
+                    app:neumorph_shadowColorLight="#1AED92"
+                    app:neumorph_shadowColorDark="#16C579"
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

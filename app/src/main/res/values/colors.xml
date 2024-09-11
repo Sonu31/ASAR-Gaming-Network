@@ -7,5 +7,8 @@
     <color name="_000000">#000000</color>
     <color name="_1c1c1e">#1c1c1e</color>
     <color name="_textcolor">#3F896D</color>/>
-    <color name="_textcolor2">#0EA9EF</color>/>
+    <color name="_textcolor2">#144CC7</color>/>
+    <color name="bule">#144CC7</color>
+    <color name="green">#06C172</color>
+    <color name="grayText">#8E8E8E</color>
 </resources>

@@ -1,16 +1,23 @@
 package com.asar.gaming.gamingnetwork.page
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.ImageView
+import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.agik.swipe_button.Controller.OnSwipeCompleteListener
+import com.agik.swipe_button.View.Swipe_Button_View
 import com.asar.gaming.gamingnetwork.R
 import com.asar.gaming.gamingnetwork.adapter.ViewPagerAdapter
 import com.asar.gaming.gamingnetwork.databinding.ActivityMainBinding
@@ -34,70 +41,61 @@ class YesNoPageActivity : AppCompatActivity() {
         _binding = ActivityYesNoPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val layouts = listOf(R.layout.layout_one, R.layout.layout_two)
-        val adapter = ViewPagerAdapter(layouts, this)
-        binding.viewPager.adapter = adapter
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            val tabView = LayoutInflater.from(this).inflate(R.layout.custom_tab, null)
-            tabTitle = tabView.findViewById<NeumorphButton>(R.id.tabTitle)
-
-            /*
-                        when (position) {
-                            0 -> {
-            //                    tabIcon.setImageResource(R.drawable.ic_tab_one)
-                                tabTitle.text = "Yes ₹ 5.3"
-            //                    tabTitle.setBackgroundColor(Color.parseColor("#144CC7"))
-            //                    tabTitle.setBackgroundColor(Color.parseColor("#144CC7"))
-
-                            }
-                            1 -> {
-            //                    tabIcon.setImageResource(R.drawable.ic_tab_two)
-                                tabTitle.text = "Yes ₹ 4.7"
-                                tabTitle.setBackgroundColor(Color.parseColor("#06C170"))
-
-                            }
-
-                        }
-            */
-            tab.customView = tabView
-        }.attach()
 
 
-        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                // Handle tab selected
-                val position = tab.position
-                tabTitle.setBackgroundColor(Color.parseColor("#144CC7"))
+        binding.start.setOnSwipeCompleteListener_forward_reverse(object : OnSwipeCompleteListener {
+            override fun onSwipe_Forward(swipeView: Swipe_Button_View) {
 
-                // Perform action based on the tab position
-                when (position) {
-                    0 -> {
-                        tabTitle.text = "Yes ₹ 5.3"
+                binding.start.setThumbBackgroundColor(ContextCompat.getColor(this@YesNoPageActivity, R.color.bule));
+                binding.start.setSwipeBackgroundColor(ContextCompat.getColor(this@YesNoPageActivity, R.color.bule));
+                binding.start.setThumbImage(resources.getDrawable(R.drawable.blue_circle_double_right));
+                binding.yesbtn.visibility = View.VISIBLE
+                binding.nobtn.visibility = View.GONE
+                binding.seekBar.progressDrawable =ContextCompat.getDrawable(this@YesNoPageActivity, R.drawable.customprogress_seekbarblue)
+                binding.seekBar.thumb = ContextCompat.getDrawable(this@YesNoPageActivity, R.drawable.custom_thumbsblue)
 
-
-                        // First tab clicked
-                        Toast.makeText(this@YesNoPageActivity, "Tab 1 clicked", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-
-                    1 -> {
-//                        tabTitle.setBackgroundColor(Color.parseColor("#144CC7"))
-                        tabTitle.text = "Yes ₹ 4.7"
-
-                        // Second tab clicked
-                        Toast.makeText(this@YesNoPageActivity, "Tab 2 clicked", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                    // Add more cases for other tabs
-                }
+                binding.seekBar.progressTintList =ContextCompat.getColorStateList(this@YesNoPageActivity, R.color.bule)
+                binding.start.setText("Swipe for Yes")
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-//                tabTitle.setBackgroundColor(Color.parseColor("#06C170"))
+            override fun onSwipe_Reverse(swipeView: Swipe_Button_View) {
+                binding.start.setText("Swipe for NO")
+                binding.start.setThumbImage(resources.getDrawable(R.drawable.green_circle_double_right));
+                binding.start.setThumbBackgroundColor(ContextCompat.getColor(this@YesNoPageActivity, R.color.green));
+                binding.start.setSwipeBackgroundColor(ContextCompat.getColor(this@YesNoPageActivity, R.color.green));
+                binding.nobtn.visibility = View.GONE
+                binding.seekBar.progressDrawable =ContextCompat.getDrawable(this@YesNoPageActivity, R.drawable.customprogress_seekbar)
+
+            }
+        })
+
+        binding.btnDecrease.setOnClickListener {
+            val currentProgress = binding.seekBar.progress
+            if (currentProgress > 0) {
+                binding.seekBar.progress = currentProgress - 1
+            }
+        }
+
+        // Increase Button Click Listener
+        binding.btnIncrease.setOnClickListener {
+            val currentProgress = binding.seekBar.progress
+            if (currentProgress < binding.seekBar.max) {
+                binding.seekBar.progress = currentProgress + 1
+            }
+        }
+
+        // SeekBar Change Listener (optional)
+        binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                // Handle progress change
             }
 
-            override fun onTabReselected(tab: TabLayout.Tab) {
-                // Handle tab reselected if needed
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                // Handle when touch starts
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                // Handle when touch stops
             }
         })
 

@@ -23,4 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "ASAR Gaming Network"
 include(":app")
- 
+//include(":app:Test")
+//include(":Libraries:Test")
+//include(":Libraries:AGIKSwipeButton")

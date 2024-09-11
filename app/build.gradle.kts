@@ -13,6 +13,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+//        multiDexEnabled =true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -60,7 +61,9 @@ dependencies {
     implementation ("com.github.Velli20:MaterialUnixGraphLibrary:v1.5")
     //Pic Chart
     implementation ("ir.mahozad.android:pie-chart:0.7.0")
+//    implementation ( project(":Libraries:AGIKSwipeButton"))
 
-
-
+//    implementation ("com.github.gratusik:AGIKSwipeButton:1.0.1")
+    implementation ("com.github.gratusik:AGIKSwipeButton:1.0.1")
+//    implementation ("com.android.support:multidex:2.0.1")
 }

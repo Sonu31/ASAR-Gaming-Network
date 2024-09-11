@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_80sdp"
         android:background="@drawable/toolbarbg"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -44,7 +44,7 @@
             android:layout_marginEnd="@dimen/_9sdp"
             android:text="Live"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/notificationbtn"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,9 +53,9 @@
             android:id="@+id/notificationbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:background="@drawable/notifiactionbg"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/icons8_notification"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +80,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
+                android:layout_marginStart="@dimen/_7sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -90,11 +91,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+
                 android:id="@+id/bg_storey"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:scaleType="fitXY"
                 android:src="@drawable/bgstory"
                 app:layout_constraintTop_toBottomOf="@id/rv"/>
@@ -207,7 +209,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/tv4"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:textColor="@color/white"
-
+android:layout_marginEnd="@dimen/_3sdp"
                 app:layout_constraintStart_toEndOf="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

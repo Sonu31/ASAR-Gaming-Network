@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/ipl_logoimg"
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_17sdp"
         android:background="@drawable/bg"
@@ -34,32 +34,258 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnid"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/ipl_logoimg"
+        app:strokeColor="#8BFFFFFF"
+        app:strokeWidth="@dimen/_1sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/nobtn"
+                android:layout_width="@dimen/_127sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/bg1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="No ₹ 4.3"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/yesbtn"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/bg3"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Yes ₹5.3"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:scrollbarSize="0dp"
-        app:tabIndicatorHeight="0dp"
-        app:tabMode="fixed"
-        app:tabRippleColor="@null"
-
-
-        android:background="@drawable/tabbg"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:scrollIndicators="none"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/cardbg"
+        android:paddingBottom="@dimen/_11sdp"
+        app:layout_constraintTop_toBottomOf="@+id/btnid"
 
-        />
 
-    <androidx.viewpager2.widget.ViewPager2
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        android:id="@+id/viewPager"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="₹5.3"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="132045 qty available"
+            android:textColor="#949191"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tv3">
+
+            <!-- Decrease button -->
+            <TextView
+                android:id="@+id/btnDecrease"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:background="@drawable/decreasebg"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- SeekBar -->
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:max="100"
+                android:progressBackgroundTint="@color/white"
+                android:progressDrawable="@drawable/customprogress_seekbar"
+                android:progressTint="@color/green"
+                android:thumb="@drawable/custom_thumbs"
+                app:layout_constraintEnd_toStartOf="@+id/btnIncrease"
+                app:layout_constraintStart_toEndOf="@+id/btnDecrease"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Increase button -->
+            <TextView
+                android:id="@+id/btnIncrease"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:background="@drawable/decreasebg"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="+"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+
+            android:id="@+id/dot_view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:background="@drawable/dotbg"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="₹5.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dot_view"
+
+
+            />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="You put"
+            android:textColor="#D8FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="₹5.3"
+            android:textColor="#06C170"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dot_view"
+
+
+            />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:text="You put"
+            android:textColor="#D8FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardid2"
         android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardid">
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="0dp"/>
+
+        <com.agik.swipe_button.View.Swipe_Button_View
+            android:id="@+id/start"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sb_swipe_animate_text="true"
+            app:sb_swipe_text="Swipe for NO"
+            app:sb_swipe_text_size="@dimen/_13sdp"
+            app:sb_thumb_image="@drawable/green_circle_double_right" />
+    </androidx.cardview.widget.CardView>
 
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/cardid2"
+        android:text="Available Balance:400.00"
+        android:textColor="#9FFFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

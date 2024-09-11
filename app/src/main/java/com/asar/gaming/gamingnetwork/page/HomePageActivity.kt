@@ -73,12 +73,16 @@ class HomePageActivity : AppCompatActivity() {
         list.add(ModelOne(R.drawable.pngtreebeautifulbatandball,"IPL","$44223","+0.00"))
         list.add(ModelOne(R.drawable.bitcoin,"Bitcoin","$54523","+0.34"))
         list.add(ModelOne(R.drawable.bitcoin,"IPL","$54523","+0.33"))
+        list.add(ModelOne(R.drawable.bitcoin,"IPL","$54523","+0.33"))
+        list.add(ModelOne(R.drawable.bitcoin,"IPL","$54523","+0.33"))
         var  adapter = AsarAdapter(list,this)
         binding.rv.adapter = adapter
 
         var list2:ArrayList<ModelTwo> = ArrayList()
         list2.add(ModelTwo("Kolkata to win the match vs \nMumbai?","H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0","Yes ₹5.3","No ₹ 4.3",R.drawable.ipl_logo))
         list2.add(ModelTwo("Kolkata to win the match vs \nMumbai?","H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0","Yes ₹6.3","No ₹ 1.3",R.drawable.ipl_logo))
+        list2.add(ModelTwo("Kolkata to win the match vs \nPanjab?","H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0","Yes ₹2.3","No ₹ 5.3",R.drawable.ipl_logo))
+        list2.add(ModelTwo("Kolkata to win the match vs \nPanjab?","H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0","Yes ₹2.3","No ₹ 5.3",R.drawable.ipl_logo))
         list2.add(ModelTwo("Kolkata to win the match vs \nPanjab?","H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0","Yes ₹2.3","No ₹ 5.3",R.drawable.ipl_logo))
         list2.add(ModelTwo("Kolkata to win the match vs \nDelhi?","H2H last 5 T20 : Kolkata 4, Mumbai 1, DRAW 0","Yes ₹6.3","No ₹ 2.3",R.drawable.ipl_logo))
 

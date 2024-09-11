@@ -4,8 +4,11 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.asar.gaming.gamingnetwork.databinding.ActivityQuestionPageBinding
+import com.velli20.materialunixgraph.Line
+import com.velli20.materialunixgraph.LinePoint
 
 import ir.mahozad.android.PieChart
+import java.util.Random
 
 
 class QuestionPageActivity : AppCompatActivity() {
@@ -55,6 +58,40 @@ class QuestionPageActivity : AppCompatActivity() {
 
         binding.graph.addSeries(series)*/
 
+
+        val unixTimeNow = System.currentTimeMillis()
+        val oneDayInMillis = (1000 * 60 * 60 * 24).toLong()
+        val showLinePoints = true
+
+        val line: Line = getDummyLine(unixTimeNow, unixTimeNow + oneDayInMillis, showLinePoints)
+        line.lineColor = Color.parseColor("#00b0ff")
+        line.fillLine = true
+        line.setFillAlpha(60) /* Set alpha of the fill color 0-255 */
+        line.lineStrokeWidth = 2f
+
+        binding.graph.setMaxVerticalAxisValue(GRAPH_MAX_VERTICAL_VALUE.toFloat())
+        binding.graph.addLine(line)
+
+
+
     }
+
+    fun getDummyLine(startDateInMillis: Long, endDateInMillis: Long, showPoints: Boolean): Line {
+        val line = Line()
+        val random: Random = Random()
+
+        var point: LinePoint
+        for (i in 0..9) {
+            val x = startDateInMillis + (((endDateInMillis - startDateInMillis) / 10) * i)
+
+            point = LinePoint(x, random.nextInt(GRAPH_MAX_VERTICAL_VALUE.toInt()).toFloat())
+            point.drawPoint = showPoints
+
+            line.addPoint(point)
+        }
+
+        return line
+    }
+
 
 }

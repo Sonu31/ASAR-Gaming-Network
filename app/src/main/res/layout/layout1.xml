@@ -8,12 +8,12 @@
         android:layout_width="@dimen/_230sdp"
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_height="@dimen/_80sdp"
-
-
+android:layout_marginStart="@dimen/_7sdp"
+app:cardCornerRadius="@dimen/_7sdp"
         android:scrollbarSize="@dimen/_1sdp"
         app:strokeColor="#2b2b2b"
 
-        app:cardBackgroundColor="@color/_000000"
+        app:cardBackgroundColor="#75787373"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
